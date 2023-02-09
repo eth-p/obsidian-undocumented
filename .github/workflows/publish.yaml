@@ -1,0 +1,51 @@
+name: Publish
+on:
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        required: true
+      commit:
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish_npm:
+    name: NPM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "${{ inputs.commit }}"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '19.6.0'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  create_release:
+    name: GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "${{ inputs.commit }}"
+
+      - name: Create Tag
+        uses: rickstaa/action-create-tag@v1
+        with:
+          tag: "v${{ inputs.version }}"
+          message: "ci: Release for ${{ inputs.version }}"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: "Version ${{ inputs.version }}"
+          tag_name: "v${{ inputs.version }}"
+          generate_release_notes: true
