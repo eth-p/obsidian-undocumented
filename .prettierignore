@@ -1,0 +1,4 @@
+# These are all manually formatted for readability.
+# Prettier will break them horribly, so they're ignored.
+src/typings/**/*.d.ts
+src/version-helpers.d.ts

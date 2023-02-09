@@ -1,0 +1,33 @@
+{
+  "name": "obsidian-undocumented",
+  "version": "1.1.9-typings-r1",
+  "description": "Undocumented/private API definitions for Obsidian.md",
+  "scripts": {
+    "test": "tsc -p ./examples --noEmit"
+  },
+  "types": "index.d.ts",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eth-p/obsidian-undocumented.git"
+  },
+  "author": "eth-p",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eth-p/obsidian-undocumented/issues"
+  },
+  "homepage": "https://github.com/eth-p/obsidian-undocumented#readme",
+  "keywords": [
+    "obsidian",
+    "obsidian.md",
+    "lib"
+  ],
+  "peerDependencies": {
+    "obsidian": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  }
+}

@@ -1,0 +1,11 @@
+# Development
+node_modules
+
+# System
+.DS_Store
+._*
+
+# IDEs
+.vscode
+.idea
+*.iml

@@ -1,0 +1,15 @@
+# Examples
+examples
+
+# Development
+node_modules
+.prettierignore
+
+# System
+.DS_Store
+._*
+
+# IDEs
+.vscode
+.idea
+*.iml
