@@ -1,0 +1,17 @@
+name: Push
+on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+      - reopened
+
+permissions:
+  contents: read
+
+jobs:
+  run_tests:
+    name: Run Tests
+    uses: ./.github/workflows/test.yaml
+    with:
+      commit: ${{ github.sha }}

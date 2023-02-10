@@ -10,16 +10,9 @@ permissions:
 jobs:
   run_tests:
     name: Run Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '19.6.0'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm test
-        name: Check Definitions are Valid
+    uses: ./.github/workflows/test.yaml
+    with:
+      commit: ${{ github.sha }}
 
   version_check:
     name: Check for Version Bump

@@ -1,0 +1,29 @@
+name: Test
+on:
+  workflow_call:
+    inputs:
+      commit:
+        type: string
+        required: true
+      node-version:
+        type: string
+        required: false
+        default: "19.6.0"
+
+permissions:
+  contents: read
+
+jobs:
+  npm_test:
+    name: npm test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "${{ inputs.commit }}"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "${{ inputs.node-version }}"
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm test
