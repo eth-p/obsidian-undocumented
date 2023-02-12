@@ -4,6 +4,7 @@ import { PluginManagerUndocumented, PluginManifestUndocumented } from "./src/typ
 import { StyleManagerUndocumented, ThemeManifestUndocumented } from "./src/typings/style-manager";
 import { ViewRegistryUndocumented } from "./src/typings/view-registry";
 import { FloatingSplitUndocumented, FloatingSplitWindowUndocumented, WorkspaceUndocumented } from "./src/typings/workspace";
+import { SettingManagerUndocumented, SettingTabUndocumented, PluginSettingTabUndocumented } from "./src/typings/setting-manager";
 import { Latest, Version } from "./src/versions";
 
 export * from "./src/versions";
@@ -20,3 +21,6 @@ export type ViewRegistry<V extends Version = Latest> = ViewRegistryUndocumented<
 export type StyleManager<V extends Version = Latest> = StyleManagerUndocumented<V, UnsafeEnabled>;
 export type ThemeManifest<V extends Version = Latest> = ThemeManifestUndocumented<V, UnsafeEnabled>;
 export type Modal<V extends Version = Latest> = ModalUndocumented<V, UnsafeEnabled>;
+export type SettingManager<V extends Version = Latest> = SettingManagerUndocumented<V, UnsafeEnabled>;
+export type SettingTab<V extends Version = Latest> = SettingTabUndocumented<V, UnsafeEnabled>;
+export type PluginSettingTab<V extends Version = Latest> = PluginSettingTabUndocumented<V, UnsafeEnabled>;
