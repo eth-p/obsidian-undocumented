@@ -1,4 +1,5 @@
 import { AppUndocumented } from "./src/typings/app";
+import { ModalUndocumented } from "./src/typings/modal";
 import { PluginManagerUndocumented, PluginManifestUndocumented } from "./src/typings/plugin-manager";
 import { StyleManagerUndocumented, ThemeManifestUndocumented } from "./src/typings/style-manager";
 import { ViewRegistryUndocumented } from "./src/typings/view-registry";
@@ -18,3 +19,4 @@ export type PluginManifest<V extends Version = Latest> = PluginManifestUndocumen
 export type ViewRegistry<V extends Version = Latest> = ViewRegistryUndocumented<V, UnsafeEnabled>;
 export type StyleManager<V extends Version = Latest> = StyleManagerUndocumented<V, UnsafeEnabled>;
 export type ThemeManifest<V extends Version = Latest> = ThemeManifestUndocumented<V, UnsafeEnabled>;
+export type Modal<V extends Version = Latest> = ModalUndocumented<V, UnsafeEnabled>;
