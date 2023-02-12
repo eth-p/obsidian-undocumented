@@ -41,13 +41,71 @@ export type StyleManagerUndocumented<V extends Version = Latest, U extends Maybe
 
 		/**
 		 * The current theme.
+		 *
+		 * The default theme is represented as an empty string.
 		 */
-		readonly theme: string;
+		readonly theme: string | "";
 
 		/**
 		 * The `<style>` element used to add the theme styles to the DOM.
 		 */
 		readonly styleEl: HTMLStyleElement;
+
+		/**
+		 * Returns the path to the custom CSS snippets folder.
+		 */
+		getSnippetsFolder(): string;
+
+		/**
+		 * Returns the path to the snippet CSS file for the given snippet.
+		 *
+		 * @warning Invalid snippet IDs will still return a valid but nonexistent path.
+		 *
+		 * @param snippet The snippet ID.
+		 * @returns The path to the snippet file.
+		 */
+		getSnippetPath(snippet: SnippetID): string;
+
+		/**
+		 * Returns the path to the themes folder.
+		 */
+		getThemeFolder(): string;
+
+		/**
+		 * Returns the path to the folder for the given theme.
+		 *
+		 * @warning Invalid theme IDs will still return a valid but nonexistent path.
+		 *
+		 * @param theme The theme ID.
+		 * @returns The path to the theme folder.
+		 */
+		getThemePath(theme: ThemeID): string;
+
+		/**
+		 * Checks if a theme is installed.
+		 * 
+		 * @param theme The theme ID.
+		 * @returns True if the theme ID is valid and the theme is installed.
+		 */
+		isThemeInstalled(theme: ThemeID): boolean;
+
+		/**
+		 * Sets the Obsidian theme.
+		 *
+		 * @warning If the specified theme ID is invalid or not installed, the default theme be shown.
+		 * @param theme The theme ID.
+		 */
+		setTheme: UnsafeExport<U, (theme: ThemeID) => void>;
+
+		/**
+		 * Enables or disables a custom CSS snippet.
+		 *
+		 * @warning If the specified theme ID is invalid or not installed, this function will silently fail.
+		 * @param snippet The snippet ID.
+		 * @param enabled Whether the snippet is enabled.
+		 */
+		setCssEnabledStatus: UnsafeExport<U, (snippet: SnippetID, enabled: boolean) => void>;
+
 
 		// TODO:
 		// oldThemes: []
@@ -55,6 +113,25 @@ export type StyleManagerUndocumented<V extends Version = Latest, U extends Maybe
 		// requestLoadSnippets: ƒ ()
 		// requestLoadTheme: ƒ ()
 		// requestReadThemes: ƒ ()
+		// checkForUpdate: ƒ (e)
+		// checkForUpdates: ƒ ()
+		// disableTranslucency: ƒ ()
+		// downloadLegacyTheme: ƒ (e)
+		// enableTranslucency: ƒ ()
+		// hasUpdates: ƒ ()
+		// getManifest: ƒ (e)
+		// installLegacyTheme: ƒ (e)
+		// installTheme: ƒ (e,t)
+		// loadCss: ƒ (e)
+		// loadData: ƒ ()
+		// loadSnippets: ƒ ()
+		// loadTheme: ƒ (e)
+		// onRaw: ƒ (e)
+		// onload: ƒ ()
+		// readSnippets: ƒ (e)
+		// readThemes: ƒ (e)
+		// removeTheme: ƒ (e)
+		// setTranslucency: ƒ (e)
 
 	}>;
 
