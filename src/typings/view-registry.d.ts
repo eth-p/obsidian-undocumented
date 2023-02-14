@@ -10,7 +10,7 @@ import { Latest, v1_0_0, Version } from "../versions";
  * This contains the metadata and creator functions for registered view types and supported file types.
  */
 export type ViewRegistryUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
-    ForVersion<v1_0_0, V, Latest, {
+	ForVersion<v1_0_0, V, Latest, {
 
 		/**
 		 * A dictionary associating a file extension to a view.

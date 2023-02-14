@@ -7,7 +7,7 @@ import { Latest, v1_0_0, Version } from "../versions";
  * The theme/custom CSS manager.
  */
 export type StyleManagerUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
-    ForVersion<v1_0_0, V, Latest, {
+	ForVersion<v1_0_0, V, Latest, {
 
 		/**
 		 * In-memory cache of theme and snippet stylesheets.
@@ -139,7 +139,7 @@ export type StyleManagerUndocumented<V extends Version = Latest, U extends Maybe
  * Manifest for a theme.
  */
 export type ThemeManifestUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
-    ForVersion<v1_0_0, V, Latest, {
+	ForVersion<v1_0_0, V, Latest, {
 		readonly author: string;
 		readonly authorUrl?: string;
 		readonly dir: string;

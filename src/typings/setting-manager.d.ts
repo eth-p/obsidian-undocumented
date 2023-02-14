@@ -12,7 +12,7 @@ import { ModalUndocumented } from "./modal";
  */
 export type SettingManagerUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
 	ModalUndocumented<V, U> &
-    ForVersion<v1_0_0, V, Latest, {
+	ForVersion<v1_0_0, V, Latest, {
 
 		/**
 		 * The active setting tab.
@@ -112,7 +112,7 @@ export type SettingTabUndocumented<V extends Version = Latest, U extends MaybeUn
 
 export type PluginSettingTabUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
 	PluginSettingTab
-    & SettingTabUndocumented<V, U>
+	& SettingTabUndocumented<V, U>
 	& ForVersion<v1_0_0, V, Latest, {
 
 	}>;

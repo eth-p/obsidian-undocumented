@@ -9,7 +9,7 @@ import { Modal } from "obsidian";
  * The settings manager for Obsidian and its settings dialog.
  */
 export type ModalUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
-    Modal
+	Modal
 	& {
 		readonly app: ReferencedExport<AppUndocumented<V, U>>;
 	}

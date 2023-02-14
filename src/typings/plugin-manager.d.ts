@@ -11,7 +11,7 @@ import { Latest, v1_0_0, Version } from "../versions";
  * This does not handle "core" (builtin) plugins.
  */
 export type PluginManagerUndocumented<V extends Version = Latest, U extends MaybeUnsafe = false> =
-    ForVersion<v1_0_0, V, Latest, {
+	ForVersion<v1_0_0, V, Latest, {
 
 		/**
 		 * A dictionary of installed community plugin manifests.
