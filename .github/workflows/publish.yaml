@@ -25,9 +25,20 @@ jobs:
           node-version: '19.6.0'
           registry-url: 'https://registry.npmjs.org'
       - run: npm ci
-      - run: npm publish
+      - name: Publish Package
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish Tags
+        run: |
+          package="$(jq -r '.name' package.json)"
+          package_version="$(jq -r '.version' package.json)"
+          jq -r 'to_entries | .[] | select(.value == "<latest>") | .key' npm-tags.json | while read -r vers; do
+            npm dist-tag add "${package}@${package_version}" "obsidian-${vers}"
+          done
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 
   create_release:
     name: GitHub Release
