@@ -1,6 +1,6 @@
 {
   "name": "obsidian-undocumented",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Undocumented/private API definitions for Obsidian.md",
   "scripts": {
     "test": "tsc -p ./examples --noEmit"
