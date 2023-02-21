@@ -3,7 +3,7 @@ examples
 
 # Development
 node_modules
-.prettierignore
+.*
 
 # System
 .DS_Store
@@ -11,5 +11,10 @@ node_modules
 
 # IDEs
 .vscode
+*.code-workspace
 .idea
 *.iml
+
+# Deployment
+.github
+/npm-tags.json
