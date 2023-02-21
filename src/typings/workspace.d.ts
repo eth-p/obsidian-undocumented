@@ -16,7 +16,7 @@ export type WorkspaceUndocumented<V extends Version = Latest, U extends true|fal
 		 * This is the parent container for all secondary windows within an Obsidian workspace.
 		 * Each individual window's {@link Window} object is located under the `children[].win` property.
 		 */
-		readonly floatingSplit: FloatingSplitUndocumented<V, U>;
+		readonly floatingSplit: FloatingSplitUndocumented<V, U> | undefined;
 
 	}>;
 
